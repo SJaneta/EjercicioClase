@@ -6,7 +6,7 @@ openai.api_key = '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'
 
 
 class Document(BaseModel):
-    item: str = 'pizza'
+    item: str = 'programacion en python'
 
 
 def process_inference(user_prompt) -> str:
@@ -14,14 +14,9 @@ def process_inference(user_prompt) -> str:
     completion = openai.ChatCompletion.create(
         model="gpt-3.5-turbo",
         messages=[
-            {"role": "system", "content": """Eres un chef que lista los ingredientes de los platillos que se te proporcionan.
+                {"role": "system", "content": """Eres un profesor de programacion para ninos .
         E.G
-        pan
-        Ingredientes:
-        arina
-        huevos
-        agua
-        azucar
+        Haz un programa que haga todas las funciones de una calculadora basica
         ...
         """},
             {"role": "user", "content": user_prompt}
